@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>Welcome Genius</title>
+	<link rel = "icon" type = "image/png" href ="{% static 'image/sketch15929334191862.png' %}">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, intial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/blog.css'%}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="text/javascript" src="{% static 'js/blog.js'%}"></script>
+</head>
+<body>
+	<div class="header">
+		<div><img src="{% static 'image/sketch1592933419186.png'%}"></div>
+
+		<div class="header_link">
+			<a href="/profile">Profile</a>
+			<a href="/logout"> Log Out </a>
+		</div>
+	</div>
+
+	<div class="links">
+		<a href="/book_list">BOOK LIST</a>
+		<a href="/blog">Blog</a>
+		<a href="/contact">Contact</a>
+	</div>
+
+	<div class="post">
+		<h3>Post Something:</h3>
+		<form class="post_form" action="/post" method="post">
+			{% csrf_token %}
+			<input class="title" type="text" name="title" placeholder="Title...">
+			<textarea class="detail" name="detail"  cols="100" placeholder="detail.."></textarea>
+			<input class="submit" type="submit" value="Post">
+		</form>
+	</div>
+	<div class="newsfeed">
+		{% for a in posts %}
+
+		{% if request.user.id == a.user_id%}
+	<div>
+    	
+		<span class="more">    
+			<a href="/edit/{{a.id}}" style="text-decoration: none">Edit</a>
+            <a href="/delete/{{a.id}}" style="text-decoration: none">Delete</a> 
+        </span>
+		<button onclick='myFunction({{forloop.counter0}})' class="myBtn"> <i class="fa fa-gg-circle"> </i></button>
+		<button onclick='myFunction({{ forloop.counter0 }})' class="dots"><i class="fa fa-gg-circle"></i></button>
+	</div>
+    	
+    	{%else%}
+    	<div style="display: none">
+    	
+		<span class="more"><button>Edit</button><button>Delete</button> </span>
+		<button onclick='myFunction({{forloop.counter0}})' class="myBtn"> <i class="fa fa-gg-circle"> </i></button>
+		<button onclick='myFunction({{ forloop.counter0 }})' class="dots"><i class="fa fa-gg-circle"></i></button>
+	</div>
+	{%endif%}
+
+		
+		<div class="news">
+		<h4>{{a.title}}</h4>
+		<p style="font-size: 13px;color:#808B96 ">Written By: {{a.user_name}} on {{a.publish_date}}</p>
+		<p>{{a.detail}}</p>
+		</div>
+		{% endfor %}
+	</div>
+</body>
+</html>

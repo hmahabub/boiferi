@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>Welcome Genius</title>
+	<link rel = "icon" type = "image/png" href ="{% static 'image/sketch15929334191862.png' %}">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, intial-scale=1.0">
+
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+	<div class="div1">
+		<div class="block logo"><img src="{% static 'image/boiferi_logo_navy.png' %}"></div>
+		<div class="block address"><address>
+			Bohoddarhat, Chittagong.
+		</address>
+
+	</div>
+	<form class="login_form" action="/login" method="post">
+		{% csrf_token %}
+			<input type="text" name="username" placeholder="Username">
+			<input type="password" name="password" placeholder="password">
+			 {% for message in messages %}
+        	<p style="color:red">{{message}}</p>
+       		 {%endfor%}
+			<a href="/accounts/password_reset">Forgot Password?</a>
+			<a href="/sign_up">Sign Up</a>
+			<input type="submit" name="Login" value="Login">
+		</form>
+
+	</div>
+
+	<div class="div2">
+		<div class="card">
+			<p>আমাদের বর্তমান প্রজন্মের সমস্যা হল, সোশ্যাল মিডিয়াতে অতিরিক্ত সময় দেওয়ার বদৌলতে আমরা বইপড়ার অভ্যাসটা অনেকটা কমিয়ে দিয়েছি। যার ফলে বই পড়ার প্রতি আমাদের আগ্রহও দিনদিন কমে যাচ্ছে।</p>
+		</div>
+		<div class="info"><img src="{% static 'image/Blue Ocean Photo Summer Instagram Post.png'%}"></div>
+		
+	</div>
+	<div class="div2_psudo">
+		<i class="fa fa-circle"></i>
+		<i class="fa fa-circle"></i>
+		<i class="fa fa-circle"></i>
+		<i class="fa fa-circle"></i>
+		<i class="fa fa-circle"></i>
+
+	</div>
+	<div class="div3">
+	<div class="box">
+		<div class="img"><img src="{% static 'image/polan_sarker.jpg'%}">
+		</div>
+		<div class="bio">
+			<div class="bio_text">
+			<h1>Polan Sarkar.</h1>
+			<p>Birth Name: Harez Uddin.<br><br>
+				Born: 9 September 1921<br>
+				Natore, Bengal Presidency, British India.<br><br>
+				Died:	1 March 2019 (aged 97)<br>
+				Bagha, Rajshahi, Bangladesh
+				Nationality: Bangladeshi<br><br>
+				Known as "Walking Library"</p>
+			</div>
+		</div>
+	</div>
+		<div class="polan">
+			<p>বই পড়ার আগ্রহ তৈরি করার জন্য নিরলসভাবে কাজ করে গিয়েছিলেন একজন ব্যক্তিত্ব। তার নাম পলান সরকার। বাড়ি বাড়ি গিয়ে বই ফেরি করতেন এই মহান মানুষ টি। তার মৃত্যুর পর তার রেখে যাওয়া শুন্যস্থানটি কিছুটা হলেও পূরনের লক্ষ্যে তারই দেখানো পথে নেমেছি আমরা।
+			</p>
+		</div>
+	</div>
+
+	<div class="div4_psudo">
+		<i class="fa fa-circle"></i>
+		<i class="fa fa-circle"></i>
+		<i class="fa fa-circle"></i>
+		<i class="fa fa-circle"></i>
+		<i class="fa fa-circle"></i>
+
+	</div>
+	<div class="div4">
+		<h3>কিভাবে সদস্য হবেন? </h3>
+	<nav>
+		<ol>
+			<li>বিকাশে ১০০ টাকা প্রেরন করুন।</li>
+			<li>ট্রান্সেকশন আইডি টি কপি করে রাখুন</li>
+			<li>আপনার তথ্য দিয়ে <a href="/sign_up">রেজিস্ট্রেশন</a> করুন।</li>
+			<li>২৪ ঘন্টার মধ্যে ভেরিফিকেশন না হলে আমাদের জানান। </li>
+		</ol>
+	</nav> 
+
+	</div>
+</body>
+
+</html>

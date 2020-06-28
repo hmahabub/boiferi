@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{%block content %}
+<style type="text/css">
+
+	.author_book_list{
+		margin: 0 auto;
+		width: 50%;
+	}
+
+	table{
+	margin: 0 auto;
+	
+	border-collapse: collapse;
+}
+
+
+
+td,  th {
+  border: 1px solid black;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #F7DC6F }
+
+tr:hover {background-color: #ddd;}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+h2{
+	margin: 0 auto;
+	text-align: center;
+}
+@media only screen and (max-width: 550px){
+	.author_book_list{
+		width:70%;
+	}
+}
+
+</style>
+	
+<div class="author_book_list">
+            	
+	{% for a in author_books%}
+	{%if forloop.counter0 == 0 %}
+	<h2>{{a.Author_name.author_name}}</h2>
+	<p>{{a.Author_name.author_bio}}</p>
+	<h2>Books Of {{a.Author_name.author_name}}:</h2><br>
+	<table>
+		
+			<th>Book Name
+			</th>
+			<th>Category</th>
+		
+	
+
+	{% endif %}
+	<tr>
+		<td>
+		{{a.book_name}}
+	</td>
+	<td>
+		{{a.book_category}}
+	</td>
+	
+	</tr>
+	
+	
+			
+
+		{% endfor %}
+	</div>
+
+
+   
+{%endblock%}

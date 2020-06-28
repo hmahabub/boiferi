@@ -1,0 +1,184 @@
+	body{		
+		  font-family: Arial, Helvetica, sans-serif;
+		background-color:#F1C40F ;
+	
+	}
+
+	.header{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.header img{
+		height: 60px;
+
+	}
+
+	.header_link{
+		margin-top: 30px;
+		text-align: right;
+	}
+
+	.header_link a{
+
+		text-decoration: none;
+		color:#EAECEE;
+		background: #2E4053;
+		padding: 5px 10px;
+	}
+
+	.header_link a:hover{
+		background-color: #F1C40F;
+		color:black;
+		border: 1px solid #2E4053;
+		padding: 5px 10px;
+		box-shadow: 2px 2px 20px white;
+	}
+
+	.links{
+		background: rgba(133, 146, 158,.1);
+		border-left: 4px solid black;
+		border-right: 4px solid black;
+		padding:2px 5px;
+		text-align: center;
+		width:80%;
+		margin: 10px auto;
+	}
+
+	.links a{
+		display: inline-block;
+		box-shadow: 2px 2px 20px white;
+		text-decoration: none;
+		color:#EAECEE;
+		background:#145A32;
+		padding: 10px 5px;
+		width: 25%;
+		margin: 5px 10px;
+		border-radius: 10px;
+	}
+
+	.links a:hover{
+		background-color: #F1C40F;
+		color:black;
+		border: 1px solid #2E4053;
+		
+	}
+
+	.post{
+		display: block;
+		text-align: center;
+		width: 70%;
+		margin: 0 auto;
+	}
+
+
+	.post_form{
+		margin: 0 auto;
+	}
+
+	.post_form input{
+		display: block;
+		margin: 0 auto;
+		font-size: ;
+		width:300px;
+		background-color: #ffffff;
+		border: 0px solid white;
+		
+	}
+
+
+	.more{
+		display: none;
+	}
+
+	.dots{
+		display: none;
+	}
+	
+
+	.title{
+		padding: 20px 40px;
+	}
+
+	.detail{
+		width:300px;
+		padding: 20px 40px 130px;
+		display: block;
+		margin: 0px auto 10px;
+		font-size: ;
+		background-color: #ffffff;
+		border: 0px solid white;
+	}
+
+	.submit{
+		padding: 10px 15px;
+		font-size: 20px;
+	}
+
+	input:hover,textarea:hover{
+		background-color:lightgray;
+	}
+
+	.submit:visited{
+		border:0px solid white;
+	}
+
+	.newsfeed{
+		display: block;
+		background-color: lightgray;
+		width: 70%;
+		max-width: 600px;
+		margin: 20px auto;
+		border-left: 2px dashed gray;
+		border-right: 2px dashed gray;
+	}
+	
+	.news{
+		padding:15px 60px;
+		border-bottom: 1px solid white;
+	}
+
+
+@media only screen and (max-width: 560px){
+
+	.post{
+		display: block;
+		width: 90%;
+
+	}
+
+
+	
+
+	.post_form input{
+		width:80%;
+		
+		
+	}
+
+	.post_form textarea{
+		width:80%;
+		
+		
+	}
+
+	.newsfeed{
+		display: block;
+		background-color: lightgray;
+		width: 95%;
+	}
+
+	.news{
+		padding:5px 10px;
+		border-bottom: 1px solid white;
+		font-size: 20px;
+	}
+
+
+
+}
+
+
+
+
+

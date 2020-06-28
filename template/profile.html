@@ -1,0 +1,19 @@
+{%extends 'base.html'%}
+
+{% block content %}
+{% for a in info %}
+<div style="display: block;width:50%; margin: 0 auto">
+<p style="display: block; padding:5px 10px; font-size: 20px">Username:{{a.username}}</p>
+<p style="display: block; padding:5px 10px; font-size: 20px">First Name:{{a.first_name}}</p>
+<p style="display: block; padding:5px 10px; font-size: 20px">Last Name:{{a.last_name}}</p>
+<p style="display: block; padding:5px 10px; font-size: 20px">Email:{{a.email}}</p>
+
+<p style="display: block; padding:5px 10px; font-size: 20px">Gender:{{a.profile_info.gender}}</p>
+<p style="display: block; padding:5px 10px; font-size: 20px">Bio:{{a.profile_info.bio}}</p>
+
+<p> will add edit section</p>
+<p> will add setting profile picture option</p>
+<p> also add transanction history</p>
+</div>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>Welcome Genius</title>
+	<link rel = "icon" type = "image/png" href ="{% static 'image/sketch15929334191862.png' %}">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, intial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/base.css'%}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/book_list.css'%}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	
+		<a href=""><img class="img" src="{% static 'image/sketch15929334191862.png'%}">
+		</a>
+		
+	</div>
+
+	<div class="links">
+		<a href="/book_list">BOOK LIST</a>
+		<a href="/blog">Blog</a>
+		<a href="/contact">Contact</a>
+	</div>
+
+	<div class="content">
+		<a class="writers" href="/allwriters">All Writer</a>
+	<div class="author_list">
+		{% for a in authors %}
+		<a href="/books/{{a.id}}">{{a.author_name}}</a>
+		{% endfor %}
+	</div>
+		<div>
+			<h3>Book In Collection:</h3>
+			<table>
+				<th>Book Name</th>
+				<th>Writer</th>
+				<th>Catagory</th>
+			{% for book in books%}
+				<tr>
+
+					<td>{{book.book_name}}</td>
+					<td>{{book.Author_name.author_name}}</td>
+					<td>{{book.book_category}}</td>
+				</tr>
+
+			{% endfor %}
+				
+			</table>
+		</div>
+		
+	</div>
+</body>
+</html>
