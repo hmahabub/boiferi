@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
 from .models import blog_post, book_list, author, profile_info
-
+from django.views.generic.list import ListView
 
 def home_page(request):
     if request.user.is_authenticated:
@@ -17,9 +17,16 @@ def sign_up(request):
 
 def book(request):
     if request.user.is_authenticated:
-    	authors = author.objects.all()
-    	books = book_list.objects.all()
-    	return render(request, "book_list.html", {'authors':authors,'books':books})
+        authors = author.objects.all()
+        books = book_list.objects.all()
+        if 'search' in request.GET:
+            query = request.GET["search"]
+            post = book_list.objects.filter(book_name__contains=query)
+            print(post)
+            return render( request,'search.html',{'post':post})
+        else:
+            return render(request, "book_list.html",{'authors':authors,'books':books})
+
     else:
         return redirect('/')
 
@@ -57,6 +64,10 @@ def joinus(request):
     email = request.POST["email"]
     pass1= request.POST["password1"]
     pass2 = request.POST["password2"]
+
+    if len(pass1) < 6:
+        messages.info(request,"Password Should be 6-10 character")
+        return redirect ('/sign_up')
 
     if pass1!=pass2:
         messages.info(request,"Passwords didn't match")
@@ -132,4 +143,7 @@ def contact(request):
 def author_book_list(request,pk):
     author_books = book_list.objects.filter(Author_name__id=pk)
     return render(request, "author_book_list.html",{"author_books":author_books})
+
+def borrow(request, pk):
+    return render (request, "borrow.html")
 

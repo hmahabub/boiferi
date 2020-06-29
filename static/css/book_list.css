@@ -2,10 +2,22 @@
 	background-color: ;
 	width:80%;
 	margin: 0 auto;
+
 	display: grid;
 	grid-template-columns: 1fr 2fr;
 	grid-column-gap: 4px;
+
 }
+.content a{
+	color: red;
+	text-decoration: none;
+	text-align: center;
+
+}
+.content h3{
+	text-align: center;
+}
+
 
 .writers{
 	display:none;
@@ -24,9 +36,24 @@
 }
 
 table{
-	width: 50%;
+	margin:0 auto;
+	width: 80%;
 	border-collapse: collapse;
 }
+
+
+table a{
+	color: mediumseagreen;
+	font-size: 25px;
+	padding:0 4px;
+	text-decoration: none;
+
+}
+table a:hover{
+	color: black;
+
+}
+
 
 
 
@@ -37,7 +64,7 @@ td,  th {
 
 tr:nth-child(even){background-color: #F7DC6F }
 
-tr:hover {background-color: #ddd;}
+
 
 th {
   padding-top: 12px;
@@ -47,9 +74,28 @@ th {
   color: white;
 }
 
+form{
+	width:300px;
+	display: block;
+	margin: 0 auto;
+}
+input, button{
+	display: block;
+	margin:4px auto;
+	padding: 10px 10px;
+	border-radius: 20px;
+}
+
+input:hover, button:hover{
+	background-color: lightgray;
+}
+
+
 @media only screen and (max-width: 550px){
 	.content{
 		display: block;
+		width:100%;
+		margin:0 auto;
 	}
 
 	.author_list{
@@ -59,5 +105,10 @@ th {
 	.writers{
 		display: block;
 	}
+	.table{
 
+	}
+	table{
+	width: 90%;
+}
 }

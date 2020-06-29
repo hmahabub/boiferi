@@ -23,29 +23,43 @@
 		<a href="/contact">Contact</a>
 	</div>
 
-	<div class="content">
+	<div class="content" style="">
 		<a class="writers" href="/allwriters">All Writer</a>
 	<div class="author_list">
 		{% for a in authors %}
 		<a href="/books/{{a.id}}">{{a.author_name}}</a>
 		{% endfor %}
+
+
 	</div>
-		<div>
-			<h3>Book In Collection:</h3>
+
+	   
+ 
+
+		<div class="table">
+			
+		<form class="add_your_class" method="GET" action="" >
+    <input class="add_your_class" type="search" name="search" placeholder="Search by book name"> 
+    <button class="add_your_class" type="submit"> Search </button>
+</form>
+
+			<h3>Book In Collection</h3>
 			<table>
 				<th>Book Name</th>
 				<th>Writer</th>
 				<th>Catagory</th>
+				<th> </th>
 			{% for book in books%}
 				<tr>
 
 					<td>{{book.book_name}}</td>
 					<td>{{book.Author_name.author_name}}</td>
 					<td>{{book.book_category}}</td>
+					<td><a href="borrow/{{book.id}}"><i class="fa fa-angle-right"></i></a></td>
 				</tr>
 
 			{% endfor %}
-				
+		
 			</table>
 		</div>
 		

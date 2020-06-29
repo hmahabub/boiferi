@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>Welcome Genius</title>
+	<link rel = "icon" type = "image/png" href ="{% static 'image/sketch15929334191862.png' %}">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, intial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/base.css'%}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/book_list.css'%}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	
+		<a href=""><img class="img" src="{% static 'image/sketch15929334191862.png'%}">
+		</a>
+		
+	</div>
+
+	<div class="links">
+		<a href="/book_list">BOOK LIST</a>
+		<a href="/blog">Blog</a>
+		<a href="/contact">Contact</a>
+	</div>
+
+	    <form class="add_your_class" method="GET" action="/book_list" >
+    <input class="add_your_class" type="search" name="search" placeholder="Search by book_name"> 
+    <button class="add_your_class" type="submit"> Search </button>
+</form>		
+
+<table>
+				<th>Book Name</th>
+				<th>Writer</th>
+				<th>Catagory</th>
+				<th> </th>
+			{% for book in post %}
+				<tr>
+
+					<td>{{book.book_name}}</td>
+					<td>{{book.Author_name.author_name}}</td>
+					<td>{{book.book_category}}</td>
+					<td><a href="borrow/{{book.id}}"><i class="fa fa-angle-right"></i></a></td>
+				</tr>
+
+
+{% empty %}
+   Not Found
+{% endfor %}
+		
+	</div>
+</body>
+</html>

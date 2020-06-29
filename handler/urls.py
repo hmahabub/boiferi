@@ -17,4 +17,5 @@ urlpatterns = [
     path("delete/<str:pk>", views.delete_post, name ="blog_post_delete"),
     path("contact", views.contact, name="Contact Page"),
     path("books/<str:pk>" ,views.author_book_list, name="author_book_list"),
+    path("borrow/<str:pk>", views.borrow, name="borrow_book"),
     ]
