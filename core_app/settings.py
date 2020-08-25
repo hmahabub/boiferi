@@ -27,14 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-TWILIO_ACCOUNT_SID = "AC909d26ea8abbcf8b63aa632c4f51f93e"
-TWILIO_AUTH_TOKEN = "9a56498dc6e4d1cd5315808fdebce268"
-TWILIO_NUMBER = "+18312720272"
-SMS_BROADCAST_TO_NUMBERS = [ 
-    "+8801832829921", # use the format +19735551234
-    "", 
-    "", 
-]
+
 # Application definition
 
 INSTALLED_APPS = [
